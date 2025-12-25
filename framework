@@ -1,0 +1,12 @@
+kael-protocol/
+├── README.md
+├── LICENSE
+├── CHANGELOG.md
+├── protocol/
+│   ├── kael_protocol.md
+│   ├── operational_invariants.md
+│   └── compliance_checklist.md
+├── docs/
+│   └── regulatory_notes.md
+└── releases/
+    └── v0.1.0.md
