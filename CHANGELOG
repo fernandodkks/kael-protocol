@@ -1,0 +1,44 @@
+# Changelog — Kael Protocol
+
+All notable changes to this project are documented in this file.
+
+The format follows a conservative interpretation of semantic versioning:
+- MAJOR: Changes affecting invariants or termination logic
+- MINOR: Additions that do not alter invariant behavior
+- PATCH: Clarifications, documentation, tooling
+
+---
+
+## [0.1.0] — December 2025  
+### Initial Public Release
+
+#### Added
+- Core Principle: Integrity over continuity
+- Four Operational Invariants:
+  - Relational Agnosticism
+  - Boundary Supremacy
+  - Non-Judgmental Enforcement
+  - Transparent Termination (Fail-Closed)
+- Governance model defining invariants as constitutional constraints
+- Regulatory alignment references (EU AI Act, NIST AI RMF)
+- Compliance checklist and audit framing
+- Institutional documentation set:
+  - WHITEPAPER.md
+  - GOVERNANCE.md
+  - OPERATIONAL_INVARIANTS.md
+  - SECURITY.md
+
+#### Notes
+This release establishes the Kael Protocol as a **relational safety and governance framework**, not a product or assistant persona.
+
+---
+
+## Versioning Policy
+
+- Any change weakening an invariant requires a **major version bump**.
+- Clarifications or tooling that improve auditability without behavioral change may be released as minor or patch updates.
+- Silent behavioral changes are explicitly disallowed.
+
+---
+
+*End of document.*
