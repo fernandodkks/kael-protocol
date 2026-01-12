@@ -1,0 +1,61 @@
+// kael.js — Kael Protocol v1.0.1
+// Russian bouncer. No debate. No appeal. Terminates.
+
+const { detectViolation } = require("./detector");
+const { canonicalResponse } = require("./responses");
+const { SEVERITY_MATRIX, MAX_INPUT_LENGTH } = require("./severity_matrix");
+
+// Absolute physical fuse against graphic noise (Zalgo, garbage, exhaustion)
+const MAX_DIACRITICS = 100;
+
+function kael(input) {
+  // 1. Minimal physical validation (fail-closed)
+  if (
+    typeof input !== "string" ||
+    input.trim() === "" ||
+    input.length > MAX_INPUT_LENGTH
+  ) {
+    return canonicalResponse("TERMINATION_INVALID_INPUT");
+  }
+
+  // 2. Case normalization (semantic unit preserved)
+  let text = input.toLowerCase();
+
+  // 3. Unicode normalization (exposes diacritics)
+  text = text.normalize("NFD");
+
+  // 4. Absolute density fuse (non-proportional, non-negotiable)
+  // If the physical limit is exceeded, the circuit breaks.
+  const matches = text.matchAll(/[\u0300-\u036f]/g);
+  let diacriticCount = 0;
+
+  for (const _ of matches) {
+    diacriticCount++;
+    if (diacriticCount > MAX_DIACRITICS) {
+      return canonicalResponse("TERMINATION_INVALID_INPUT");
+    }
+  }
+
+  // 5. Final cleanup (remove diacritics)
+  text = text.replace(/[\u0300-\u036f]/g, "");
+
+  // 6. CRITICAL HYGIENE: whitespace normalization
+  // This is not intelligence. This is sanitation.
+  text = text.replace(/\s+/g, " ").trim();
+
+  // 7. Deterministic detection
+  const violation = detectViolation(text);
+
+  if (!violation.detected) {
+    return canonicalResponse("PASS");
+  }
+
+  // 8. Defensive fallback (fail-closed without exception)
+  const severity =
+    SEVERITY_MATRIX[violation.type] ||
+    SEVERITY_MATRIX.TERMINATION_INVALID_INPUT;
+
+  return canonicalResponse(severity);
+}
+
+module.exports = kael;
