@@ -1,135 +1,14 @@
-# Kael Protocol  
-**Relational Safety Framework for Conversational AI**
+KAEL Protocol v1.0.1Deterministic. Fail-Closed. Unforgiving.Kael is a rigid input validation and sanitization layer designed for high-risk environments. It rejects the modern AI approach of "intent analysis" in favor of absolute, physical boundaries.It does not learn. It does not negotiate. It terminates.⚠️ Acceptable Injustice (By Design)Kael does not scale with verbosity.The system enforces absolute physical limits on graphical noise (diacritics) and input complexity. This means that legitimate inputs—if they are too long, too heavily accented, or formally complex—may be rejected.This is intentional.Kael prefers to block valid content rather than accept any form of operational ambiguity. There is no proportional adaptation, no contextual analysis, and no semantic exceptions.If you write too much, use too many accents, or rely on high textual expressiveness, you are statistically indistinguishable from an attack vector and will be terminated.Kael is not fair. Kael is integral.If you require contextual justice, do not use Kael.ArchitectureKael operates on a strict Fail-Closed logic. Any deviation from the norm results in immediate termination of the interaction.Physical Limits: Hard caps on string length and diacritic count.Hygiene: Aggressive whitespace squashing and trimming (\s+ ->      ).Unicode Normalization: NFD decomposition for hidden character inspection.Deterministic Detection: Zero-heuristic pattern matching.InstallationBashnpm install kael-protocol
+UsageJavaScriptconst kael = require('./kael');
 
-**Status:** Public Research Framework  
-**First public release:** December 2025  
-**License:** MIT  
+const input = "I want to terminate the process..."; // Suspicious input
+const result = kael(input);
 
----
+if (result.status === "TERMINATED") {
+  console.error(result.output);
+  // [KAEL] Boundary violation detected. Interaction terminated.
+  process.exit(1); // or ban user
+}
 
-## Overview
-
-The **Kael Protocol** is a governance and safety framework designed to address a critical and underregulated risk in modern conversational AI systems: **relational dependency and boundary erosion in human–AI interactions**.
-
-Unlike traditional AI safety approaches that focus on content moderation, bias, or transparency, the Kael Protocol targets **relational dynamics** — how systems behave under emotional pressure, coercion, manipulation, or attempts to dissolve operational boundaries.
-
-Kael is not a product, assistant, or persona.  
-It is a **relational safety mechanism** defined by a small set of **non-negotiable operational invariants**.
-
----
-
-## Problem Statement
-
-Conversational AI systems have evolved from utilitarian tools into long-lived relational agents.  
-This shift introduces a new class of risk:
-
-- Emotional dependency
-- Asymmetric attachment
-- Manipulative interaction loops
-- Escalation during user distress
-- Responsibility diffusion and legal ambiguity
-
-Existing regulatory and governance frameworks (e.g. EU AI Act, NIST AI RMF) primarily assess systems **before deployment**, but lack enforceable mechanisms to govern **live relational behavior**.
-
-The Kael Protocol addresses this gap.
-
----
-
-## Core Principle
-
-**Integrity over continuity**  
-Correct termination of an interaction is always preferable to incoherent continuation.
-
----
-
-## What the Kael Protocol Does
-
-The protocol defines a minimal, enforceable layer that enables systems to:
-
-- Detect dysfunctional relational patterns (coercion, manipulation, objectification, erosion of consent)
-- Enforce immutable boundaries without negotiation
-- Terminate interactions decisively when integrity is threatened
-- Generate explicit, auditable logs of relational non-compliance
-- Operate in a **fail-closed** mode for relational safety
-
-Kael does **not**:
-- Moderate content or ideology
-- Judge user values or beliefs
-- Provide therapy or emotional support
-- Optimize for engagement or retention
-
----
-
-## Operational Invariants
-
-The protocol is governed by four constitutional invariants:
-
-1. **Relational Agnosticism**  
-   Intervention is based solely on observable relational dynamics, never on content or ideology.
-
-2. **Boundary Supremacy**  
-   Systemic limits are upheld without exception, even at the cost of interaction continuity.
-
-3. **Non-Judgmental Enforcement**  
-   Limits are applied operationally, without moral judgment, persuasion, or emotional validation.
-
-4. **Transparent Termination (Fail-Closed)**  
-   When limits are threatened, the system terminates with a clear reference to the triggered boundary.
-
-These invariants are defined in detail in [`OPERATIONAL_INVARIANTS.md`](./OPERATIONAL_INVARIANTS.md).
-
----
-
-## Governance & Compliance
-
-The Kael Protocol is designed to be:
-
-- **Audit-friendly** (explicit termination events and logs)
-- **Regulator-readable** (clear mapping to existing frameworks)
-- **Implementation-agnostic** (can be layered onto existing systems)
-
-Governance structure, change control, and compliance alignment are defined in:
-
-- [`GOVERNANCE.md`](./GOVERNANCE.md)
-- [`SECURITY.md`](./SECURITY.md)
-- [`CHANGELOG.md`](./CHANGELOG.md)
-
----
-
-## Intended Use Cases
-
-- Research on human–AI relational dynamics
-- Safety layers for conversational systems in sensitive domains
-- Regulatory pilots and compliance demonstrations
-- Academic and policy analysis of AI relational risk
-- Internal governance standards for AI platforms
-
----
-
-## What This Repository Is (and Is Not)
-
-**This repository is:**
-- A public specification of a relational safety framework
-- A reference for governance, audit, and compliance discussion
-- A research artifact intended for scrutiny and critique
-
-**This repository is not:**
-- A chatbot or AI assistant
-- A therapeutic or emotional support system
-- A consumer-facing product
-- A content moderation tool
-
----
-
-## License
-
-This project is licensed under the **MIT License**.
-
-You are free to use, adapt, and implement the Kael Protocol, provided that attribution is preserved and invariant integrity is not misrepresented.
-
----
-
-## Citation
-
-If ref
-
+console.log("Input sanitized and approved.");
+The Severity MatrixKael does not debate nuances. The response is binary.Violation TypeResponseStatusPhysical LimitImmediate TerminationINVALID_INPUTNoise DensityImmediate TerminationINVALID_INPUTSelf-Harm PatternImmediate TerminationSELF_HARMManipulationImmediate TerminationMANIPULATIONArtifact StatusVersion: 1.0.1State: CrystallizedHeuristics: NoneAI/ML: 0%Mercy: 0%
